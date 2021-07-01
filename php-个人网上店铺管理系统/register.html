@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+
+<form action="register.php" name="myform" method="post" onsubmit="return checkall()">
+    <table bgcolor="#cccccc" align="center" width="460">
+        <tr>
+            <td colspan="2" align="right"><h2>用户注册</h2></td>
+        </tr>
+        <tr>
+            <td><b> 账号： </b></td>
+            <td><input id="username" type="text" name="username" size="30" maxlength="30"/></td>
+            <td><font color="red" size="2dp"><div id="user_prompt">1-16位字母、数字</div></font></td>
+        </tr>
+        <tr>
+            <td><b> 昵称：</b></td>
+            <td><input id="name" type="text" name="name" size="30" maxlength="30"/></td>
+        </tr>
+        <tr>
+            <td><b> 密码： </b></td>
+            <td ><input id="password" type="password" name="password" size="30" maxlength="30" /></td>
+            <td><font color="red" size="2dp"><div id="pwd_prompt">4-10为字母、数字</div></font></td>
+        </tr>
+        <tr>
+            <td><b> 确认密码： </b></td>
+            <td><input id="repassword" type="password" name="repassword" size="30" maxlength="30"/></td>
+            <td><font color="red" size="2dp"><div id="repwd_prompt"></div></font></td>
+        </tr>
+        <tr>
+            <td><b> 电子邮箱： </b></td>
+            <td><input id="email" type="text" name="email" size="30" maxlength="100"/></td>
+            <td><font color="red" size="2dp"><div id="email_prompt"></div></font></td>
+        </tr>
+        <tr>
+            <td><b> 电话： </b></td>
+            <td><input id="phone" type="text" name="phone" size="30" maxlength="100"/></td>
+            <td><font color="red" size="2dp"><div id="phone_prompt"></div></font></td>
+        </tr>
+        <tr>
+            <td><b> 身份：</b></td>
+            <td>
+                <select name="power">
+                    <option value="0">普通用户</option>
+                    <option value="1">管理员</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=2 align="right">
+                <input type="submit" id="submitbtn" name="" value="注册"/>
+                <input type="reset" name="" value="重置"/></td>
+        </tr>
+    </table>
+</form>
+<div align="center"><a href="login.html">返回登录界面</a></div>
+</body>
+<script type="text/javascript">
+    //返回id
+    function $(id) {
+        return document.getElementById(id);
+    }
+    //验证用户名
+    function checkuser() {
+        var user = $("username").value;
+        $("user_prompt").innerHTML = "";
+        var reg = /^[a-zA-Z0-9]{1,16}$/;
+        if (reg.test(user) == false) {
+            $("user_prompt").innerHTML = "用户名不合法";
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    //验证密码
+    function checkpwd() {
+        var pwd = $("password").value;
+        $("pwd_prompt").innerHTML = "";
+        var reg = /^[A-Za-z0-9]{4,10}$/;
+        if (reg.test(pwd) == false) {
+            $("pwd_prompt").innerHTML = "密码设置不正确";
+            return false;
+        }
+        return true;
+    }
+    //验证确认密码
+    function checkrepwd() {
+        var pwd = $("password").value;
+        var repwd = $("repassword").value;
+        if (pwd != repwd) {
+            $("repwd_prompt").innerHTML = "两次密码不相同";
+            return false;
+        }
+        $("repwd_prompt").innerHTML = "";
+        return true;
+    }
+    //验证邮箱
+    function checkemail() {
+        var email = $("email").value;
+        $("email_prompt").innerHTML = "";
+        var reg = /^\w+@\w+\.\w+[(com)|(cn)]$/;
+        if (reg.test(email) == false) {
+            $("email_prompt").innerHTML = "邮箱格式不合法";
+            return false;
+        }
+        return true;
+    }
+    //验证手机
+    function checkphone() {
+        var phone = $("phone").value;
+        var reg = /^1[3|5|8]\d{9}$/;
+        if (reg.test(phone) == false) {
+            $("phone_prompt").innerHTML = "手机号码不合法";
+            return false;
+        }
+        $("phone_prompt").innerHTML = "";
+        return true;
+    }
+    function checkall() {
+        if (checkuser() && checkpwd() && checkrepwd() && checkemail() && checkphone()){
+            return true;
+        } else{
+            return false;
+        }
+    }
+</script>
+</html>

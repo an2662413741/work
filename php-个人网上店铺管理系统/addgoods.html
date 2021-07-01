@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>添加商品</title>
+</head>
+<body>
+<form action="addgoods.php" enctype="multipart/form-data" method="post">
+    <label>商品名称：</label><input type="text" name="goodsname"/><br>
+    <label>所属店铺：</label><input type="text" name="shopid" placeholder="与你的账号相同"/><br>
+    <label>商品类型：</label><input type="text" name="goodstype"/><br>
+    <lable>商品颜色：</lable><input type="text" name="goodscolor"/><br>
+    <lable>商品型号：</lable><input type="text" name="goodssize"/><br>
+    <label>上传图片：</label><input name="img" type="file"/><br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

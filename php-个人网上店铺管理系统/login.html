@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<div align="center">
+    <form action="login.php" method="post">
+        <p><span>账号：</span><input type="text" name="username" required="" /></p>
+        <p><span>密码：</span><input type="password" name="password" required="" /></p>
+        <img src="image_captcha.php"  onclick="this.src='image_captcha.php?'+new Date().getTime();" width="100" height="50"><br/>
+        <input type="text" name="captcha" placeholder="请输入图片中的验证码"><br/>
+        <p>
+            <input type="submit" name="" value="登录"/>
+            <input type="reset" name="" value="重置"/>
+        </p>
+    </form>
+    <a href="register.html">新用户注册</a>
+    <a href="findpwd.html">找回密码</a>
+</div>
+</body>
+</html>
