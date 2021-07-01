@@ -1,0 +1,5 @@
+D:\tool\Microsoft Visual Studio 12.0\workspace\DZYWork\DB\bin\Debug\DB.dll
+D:\tool\Microsoft Visual Studio 12.0\workspace\DZYWork\DB\bin\Debug\DB.pdb
+D:\tool\Microsoft Visual Studio 12.0\workspace\DZYWork\DB\obj\Debug\DB.csprojResolveAssemblyReference.cache
+D:\tool\Microsoft Visual Studio 12.0\workspace\DZYWork\DB\obj\Debug\DB.dll
+D:\tool\Microsoft Visual Studio 12.0\workspace\DZYWork\DB\obj\Debug\DB.pdb
